@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Match</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        #flag {
+            position: absolute;
+            top: 60px;
+            right: 500px;
+        }
+    </style>
+    <script>
+        var regExp = / /;
+        function CountryChange(){
+            var countryName = document.getElementById("lstCountry").value;
+            var flag = document.getElementById("flag");
+            var mobileTextBox = document.getElementById("txtMobile");
+            var error = document.getElementById("error");
+
+            if(countryName=="India") {
+                flag.src="/public/images/india.png";
+                mobileTextBox.placeholder = "+91 and 10 digits";
+                regExp = /\+91\d{10}/;
+                error.innerHTML = "";
+
+            } else if (countryName=="US") {
+                flag.src="/public/images/USA.png";
+                mobileTextBox.placeholder = "+(1)(425) 555-0100";
+                regExp = /\+\(1\)\(\d{3}\)\s\d{3}-\d{4}/;
+                error.innerHTML = "";
+
+            } else if (countryName=="UK") {
+                flag.src="/public/images/UK.jpg";
+                mobileTextBox.placeholder = "+(44)(20) 1234 5678";
+                regExp = /\+\(44\)\(\d{2}\)\s\d{4}\s\d{4}/;
+                error.innerHTML = "";
+
+            } else {
+                error.innerHTML = "Please Select your country".fontcolor('red');
+                flag.src="";
+                mobileTextBox.placeholder="Country not selected";
+            }
+        }
+        function VerifyMobile(){
+            var mobileNumber = document.getElementById("txtMobile").value;
+            var mobileError = document.getElementById("mobileError");
+            if(mobileNumber.match(regExp)) {
+                document.write("<h2>Mobile Verified Successfully..</h2>");
+            } else {
+                mobileError.innerHTML= `Invalid Mobile : <b>${document.getElementById("txtMobile").placeholder}</b>`.fontcolor('red');
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <img id="flag" width="100" height="100" class="rounded rounded-circle">
+    <h2>Verify Mobile Number</h2>
+    <dl class="w-25">
+        <dt>Select Your Country</dt>
+        <dd>
+            <select onchange="CountryChange()" id="lstCountry" class="form-select">
+                <option>Select Country</option>
+                <option>India</option>
+                <option>US</option>
+                <option>UK</option>
+            </select>
+        </dd>
+        <dd id="error"></dd>
+        <dt>Your Mobile Number</dt>
+        <dd>
+            <input type="text" id="txtMobile" class="form-control">
+        </dd>
+        <button onclick="VerifyMobile()" class="btn btn-primary w-100">Submit</button>
+    </dl>
+    <p class="mt-4 text-center" id="mobileError"></p>
+</body>
+</html>

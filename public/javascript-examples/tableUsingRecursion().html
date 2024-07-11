@@ -1,0 +1,11 @@
+<script>
+    function printTable(n, i = 1) {
+        if (i > 10) {
+            return;
+        }
+        document.write(`${n} x ${i} = ${n * i}` + "<br>");
+        printTable(n, i + 1);
+    }
+
+    printTable(5);
+</script>

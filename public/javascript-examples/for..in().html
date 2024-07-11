@@ -1,0 +1,11 @@
+<script>
+    fetch("/public/data/product.json")
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(product){
+        for(var property in product){
+            document.write(`${property}<br>`)
+        }
+    })
+</script>

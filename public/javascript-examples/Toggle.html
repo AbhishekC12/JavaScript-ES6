@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function SetStock(){
+            var stockCheckbox = document.getElementById("stock");
+            var lebel = document.getElementById("lblStock")
+            if(stockCheckbox.checked==true){
+                lebel.innerHTML = "Available"
+            }else{
+                lebel.innerHTML = "out of Stock"
+            }
+        }
+        function ToggleClick(){
+            var stockCheckbox = document.getElementById("stock");
+            stockCheckbox.checked = (stockCheckbox.checked==true)?false:true;
+            var lebel = document.getElementById("lblStock");
+            lebel.innerHTML = (stockCheckbox.checked==true)?"Available":"out of Stock";
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <button onclick="ToggleClick()">Toggle</button>
+    </div>
+    <input type="Checkbox" onchange="SetStock()" id="stock"> <lebel id="lblStock">Out of stock</lebel>
+</body>
+</html>

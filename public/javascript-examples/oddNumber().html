@@ -1,0 +1,9 @@
+<script>
+    var values = [3,2,4,7,6,9,8,10];
+    var result = values.filter(function(value){
+        return value%2!==0;
+    }).reduce(function(sum,value){
+        return sum + value;
+    })
+    document.write(`Sum Of Odd Number in Array:${result}`)
+</script>

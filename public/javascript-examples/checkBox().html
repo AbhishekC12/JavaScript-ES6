@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var categories = ["All","Electronics","Fashion"]
+        function bodyload(){
+            categories.map(function(category){
+                var li = document.createElement("li");
+                var input = document.createElement("input");
+                input.type = "checkbox";
+                var lebel = document.createElement("lebel");
+                lebel.innerHTML = category;
+                li.appendChild(input);
+                li.appendChild(lebel);
+                document.querySelector("ul").appendChild(li);
+            })
+        }
+    </script>
+    <style>
+        ul{
+            list-style: none;
+        }
+    </style>
+</head>
+<body onload="bodyload()">
+    <ul>
+
+    </ul>
+</body>
+</html>

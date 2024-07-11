@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script>
+        function LoginClick(){
+            var userid = document.getElementById("UserId").value;
+            localStorage.setItem("uid", userid);
+            location.href = "home.html";
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <h3>User Login</h3>
+        <dt>User Id</dt>
+        <dd><input type="text" id="UserId"></dd>
+        <dt>Password</dt>
+        <dd><input type="password" id="Password"></dd>
+    </dl>
+    <button onclick="LoginClick()">Login</button>
+</body>
+</html>

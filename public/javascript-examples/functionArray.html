@@ -1,0 +1,12 @@
+<script>
+    function Details(values){
+        for(var item of values){
+            document.write(item + "<br>");
+        }
+    }
+    function Product(prod){
+        document.write(`Name=${prod.Name}<br>Price=${prod.Price}`);
+    }
+    Details([10, 20, 30]);
+    Product({Name:"Samsung TV", Price: 45000.33});
+</script>

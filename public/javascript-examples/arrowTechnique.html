@@ -1,0 +1,9 @@
+<script>
+    fetch("http://fakestoreapi.com/products")
+    .then(response=>response.json())
+    .then(products=>{
+        products.map(product =>{
+            document.write(product.title + "<br>")
+        })
+    })
+</script>

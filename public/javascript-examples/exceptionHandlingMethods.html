@@ -1,0 +1,20 @@
+<script>
+    try{
+       var a = parseInt(prompt("Enter A Value"));
+       var b = parseInt(prompt("Enter B Value"));
+       if(b==0){
+           throw "Can't Divide by Zero <br>";
+       }
+       if(b>a){
+           throw "Number too large to divide <br>"
+       }
+       var c=a/b
+       document.write(`Division=${c}<br>`);
+       }
+       catch(exp){
+           document.write(exp);
+       }
+       finally{
+           document.write(`Program End`)
+       }
+</script>

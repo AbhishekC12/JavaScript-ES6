@@ -1,0 +1,22 @@
+<script>
+    var products=[
+        {
+            Name : "TV",
+            Category : "Electronics"
+        },
+        {
+            Name : "Casuals",
+            Category : "Electronics"
+        },
+        {
+            Name : "Mobile",
+            Category : "Electronics"
+        }
+    ]
+
+    products.filter(function(product){
+        return product.Category=="Electronics"
+    }).map(function(product){
+        document.write(product.Name +  "<br>");
+    })
+</script>

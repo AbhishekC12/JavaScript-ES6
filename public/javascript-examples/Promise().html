@@ -1,0 +1,15 @@
+<script>
+    var FetchData = new Promise((resolve,reject)=>{
+        var url = prompt("Enter Url");
+        if(url==="https://fakestoreapi.com/"){
+            resolve(`Success: Data Fetched successfully...`)
+        }else{
+            reject(`Error : Unable to fetch data`);
+        }
+    })
+    FetchData.then((msg)=>{
+        document.write(msg);
+    }).catch((msg)=>{
+        document.write(msg);
+    })
+</script>

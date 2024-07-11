@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function bodyload(){
+           var images =  document.getElementsByTagName("img");
+           for(var i=0; i<images.length; i++){
+              console.log(images[i].src);
+           }
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <p>Welcome</p>
+    <h2>JavaScript</h2>
+    <img src="../public/images/amazon10.jpg">
+    <img src="../public/images/amazon12.jpg">
+    <img src="../public/images/amazon13.jpg">
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var userDetails={
+            "Card" : "4444555566667777890",
+            "Cvv" : "4567",
+            "Expiry" : "2024"
+        }
+        function VerifyCard(){
+            var card = document.getElementById("txtCard").value;
+            if(card===userDetails.Card){
+                document.getElementById("txtCvv").disabled = false;
+                document.getElementById("cvvContainer").style.display = "block";
+            }
+        }
+        function VerifyCvv(){
+            var cvv = document.getElementById("txtCard").value;
+            if(cvv===userDetails.Card){
+                document.getElementById("lstExpiry").disabled = false;
+                document.getElementById("expiryContainer").style.display = "block";
+            }
+        }
+        function VerifyExpiry(){
+            var expiry = document.getElementById("lstExpiry").value;
+            if(expiry===userDetails.Expiry){
+                document.getElementById("btnPay").disabled = false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Payment Details</legend>
+        <dl>
+            <dt>Card Details</dt>
+            <dd><input type="text" id="txtCard" onblur="VerifyCard()"></dd>
+            <div id="cvvContainer" style="display: none;">
+            <dt>Cvv</dt>
+            <dd><input type="text" id="txtCvv" size="4" onblur="VerifyCvv()" disabled></dd>
+            </div>
+            <div id="expiryContainer" style="display: none;">
+                <dt>Expiry</dt>
+            <dd>
+                <select id="lstExpiry" onchange="VerifyExpiry()">
+                    <option>Select Option</option>
+                    <option>2023</option>
+                    <option>2024</option>
+                    <option>2025</option>
+                </select>
+            </dd>
+            </div>
+        </dl>
+        <button id="btnPay" disabled>pay</button>
+    </fieldset>
+</body>
+</html>

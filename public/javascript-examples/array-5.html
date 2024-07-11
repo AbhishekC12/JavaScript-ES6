@@ -1,0 +1,11 @@
+<script>
+    var values = [1,"TV",34000.44,true,["Dehli","Hyd"],function(){document.write("Hello world")}]
+    var [Id,Name,Price,Stock,Cities,hello] = values;
+    document.write(`
+    Id= ${Id}<br>
+    Name = ${Name}<br>
+    Price = ${Price}<br>
+    Stock = ${Stock}<br>
+    Cities = ${Cities}<br>`);
+    hello();
+</script>

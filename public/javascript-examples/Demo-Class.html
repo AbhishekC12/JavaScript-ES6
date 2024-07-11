@@ -1,0 +1,14 @@
+<script>
+    class Product{
+        Name = "Samsung TV";
+        Cities = ["Dehli","Hyd"];
+        Rating = { rate : 4.5 , count : 4500 }
+    }
+    let obj = new Product;
+    obj.Name = prompt("Enter Name");
+    document.write(`
+    Name = ${obj.Name}<br>
+    Cities = ${obj.Cities.toString()}<br>
+    Rating = ${obj.Rating.rate}<br>
+    Count = ${obj.Rating.count}`)
+</script>

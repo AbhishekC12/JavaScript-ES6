@@ -1,0 +1,18 @@
+<script>
+    function* PrintNumbers(){
+         yield 10;
+        yield 20;
+        yield 30;
+        yield 40;
+        yield 50;
+        yield 60;
+    }
+    var obj = PrintNumbers();
+    console.log(obj.next());
+    console.log(obj.next());
+    console.log(obj.next());
+    console.log(obj.next());
+    console.log(obj.next());
+    console.log(obj.next());
+    console.log(obj.next());
+</script>

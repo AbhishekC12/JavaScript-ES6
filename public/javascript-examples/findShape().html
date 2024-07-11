@@ -1,0 +1,16 @@
+<script>
+    function findShape(values){
+        if(values.length<3){
+            document.write("please provide 3 or more values")
+        }else{
+            if(values.length===3){
+                document.write("You entered values for Triangle")
+            }else if(values.length===4){
+                document.write("You entered values for Square or Rectangle")
+            }else if(values.length>=5){
+                document.write("You entered values for Polygon")
+            }
+        }
+    }
+    findShape([10,20,10,40,50])
+</script>

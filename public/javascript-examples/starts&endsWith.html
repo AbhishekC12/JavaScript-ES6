@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/node_modules//bootstrap/dist/css/bootstrap.css">
+    <script>
+        function VerifyCard(){
+            var card = document.getElementById("txtCard").value;
+            var imgCard = document.getElementById("imgCard");
+            if(card.startsWith("4455")){
+                imgCard.src="/public/images/master.ico"
+            }else{
+                imgCard.src="/public/images/visa.ico"
+            }
+        }
+        function VerifySkype(){
+            var skype = document.getElementById("txtSkype").value
+            var skypeError = document.getElementById("SkypeError");
+            if(skype.endsWith("outlook.com")){
+                skypeError.innerHTML = "";
+            }else{
+                skypeError.innerHTML="invalid Skype ID".fontcolor('red')
+            }
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <dl>
+        <dt>Your Card Number</dt>
+        <dd class="input-group">
+            <input onblur="VerifyCard()" type="text" id="txtCard"><img id="imgCard" width="50" height="30">
+        </dd>
+        <dt>Your Skype Id</dt>
+        <dd>
+            <input onblur="VerifySkype()" type="text" id="txtSkype"><span id="SkypeError"></span>
+        </dd>
+    </dl>
+</body>
+</html>

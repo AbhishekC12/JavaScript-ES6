@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        data = [
+            {Topic:"HTML", Details:["Void Element","Normal Element","RC Data Element"]},
+            {Topic:"Javascript",Details:["Variables","Data Types","Operators"]}
+        ]
+        function bodyload(){
+            var str = location.search.substring(location.search.indexOf("=")+1);
+            document.querySelector("h2").innerHTML = `${str} Topics`
+            var obj = data.find((item)=>{
+                return item.Topic==str;
+            })
+            if(obj){
+                obj.Details.map(topic=>{
+                var li = document.createElement("li");
+                li.innerHTML = topic;
+                document.querySelector("ol").appendChild(li);
+            })
+            }else{
+                document.write("Topic not found")
+            }
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h2></h2>
+    <ol>
+        
+    </ol>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<script>
+    var tv = {
+        "Name" : "Samsung Tv",
+        "Price" : 45000.00,
+        "Stock" : true,
+        "Cities" : ["Dehli" , "Hyd"],
+        "Rating" : {"Rate": 4.2,"Count":4500}
+    }
+    document.write(`Name: ${tv.Name} <br>
+    Price : ${tv.Price} <br>
+    Stock : ${tv.Stock} <br>
+    Cities: ${tv.Cities.join("/")}
+    Rating: ${tv.Rating.Rate} [${tv.Rating.Count}]`)
+</script>

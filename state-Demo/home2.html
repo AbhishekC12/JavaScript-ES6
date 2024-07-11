@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script>
+        function bodyload(){
+           var userid = document.cookie;
+           document.querySelector("p").innerHTML = userid.substring(userid.indexOf("=") + 1);
+        }
+        function SignoutClick(){
+            location.href = "./login2.html";
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h3>Home <button onclick="SignoutClick()">Signout</button> </h3>
+    <p></p>
+</body>
+</html>

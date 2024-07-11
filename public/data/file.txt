@@ -1,0 +1,4 @@
+AJAX
+Asynchronus Javascript and XML 
+It configures partial postback
+it uses XMLHttpRequest object

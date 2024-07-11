@@ -1,0 +1,13 @@
+<script>
+    var ProductId = Symbol()
+   var product ={
+     [ProductId]: 1,
+    Name : "Samsung TV",
+    Price : 36000,
+    Stock : true
+   }
+   for(var key in product){
+    document.write(`${key}<br>`)
+   }
+   document.write(`product id = ${product[ProductId]}`)
+</script>

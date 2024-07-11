@@ -1,0 +1,9 @@
+<script>
+    var values = [3,2,4,7,6,9,8,10]
+    var result = values.filter(function(value){
+        return value%2==0;
+    }).reduce(function(value,sum){
+        return value + sum;
+    })
+    document.write(`Sum Of Even Number in Array : ${result}`)
+</script>

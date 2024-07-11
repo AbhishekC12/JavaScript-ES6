@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Submit(){
+            document.querySelector("p").innerHTML = "";
+           var checkboxes = document.getElementsByName("course");
+           for(var i=0; i<checkboxes.length; i++){
+               if(checkboxes[i].checked){
+                    document.querySelector("p").innerHTML += checkboxes[i].value + "<br>";
+               }
+           }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <button onclick="Submit()">Submit</button>
+    </div>
+    <input type="checkbox" onchange="Submit()" name="course" value="Java"> Java
+    <input type="checkbox" onchange="Submit()"  name="course" value=".NET"> .NET
+    <input type="checkbox" onchange="Submit()"  name="course" value="UI"> UI
+    <p></p>
+</body>
+</html>

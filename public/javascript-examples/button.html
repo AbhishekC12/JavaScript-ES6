@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+   function BoldClick(){
+    document.getElementById("msg").innerHTML = "Welcome to javascript".bold();
+    }
+    function ItalicsClick(){
+      document.getElementById("msg").innerHTML = "Welcome to javascript".italics();
+    }
+    function StrikeClick(){
+      document.getElementById("msg").innerHTML = "Welcome to javascript".fontcolor('red');
+    }
+  </script>
+</head>
+<body>
+  <div>
+    <button onclick="BoldClick()">B</button>
+    <button onclick="ItalicsClick()">I</button>
+    <button onclick="StrikeClick()">Strike</button>
+  </div>
+  <p id="msg">Welcome to javascript</p>
+</body>
+</html>

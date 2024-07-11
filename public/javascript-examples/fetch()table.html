@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/node_modules//bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        function FetchClick(){
+            alert("You Clicked Fetch")
+            fetch("/public/data/products.json")
+            .then(function(res){
+                return res.json();
+            })
+            .then(function(products){
+                products.map(function(product){
+                    var tr = document.createElement("tr");
+                    var tdName = document.createElement("td");
+                    var tdPrice = document.createElement("td");
+                    var tdStock = document.createElement("td");
+
+                    tdName.innerHTML= product.Name;
+                    tdPrice.innerHTML = product.Price;
+                    tdStock.innerHTML = product.Stock; 
+
+                    tr.appendChild(tdName)
+                    tr.appendChild(tdPrice)
+                    tr.appendChild(tdStock)
+
+                    document.querySelector("tbody").appendChild(tr)
+                })
+            })
+        }
+       
+    </script>
+</head>
+<body>
+    <div class="mt-4">
+        <button onclick="FetchClick()">Fetch Product</button>
+    </div>
+    <br><br>
+    <table width="100%" border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+</html>

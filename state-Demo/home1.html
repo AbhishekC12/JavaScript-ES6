@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script>
+        function bodyload(){
+            if(sessionStorage.getItem("uid")==null){
+                location.href="login.html";
+            } else {
+                document.querySelector("p").innerHTML = `Hello ! ${sessionStorage.getItem("uid")}`;
+            }
+        }
+        function SignoutClick(){
+            sessionStorage.removeItem("uid");
+            location.href = "login.html";
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h3>Home <button onclick="SignoutClick()">Signout</button> </h3>
+    <p></p>
+</body>
+</html>

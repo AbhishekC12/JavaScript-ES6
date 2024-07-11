@@ -1,0 +1,14 @@
+<script>
+    var Name ="Panasonic TV";
+    var Price = 44000;
+    var Mfd = new Date("2023-02-23 04:45:20.20")
+    var Weeksday = ["Sunday","Monday","Tuesday","Wenesday","Thusday","Friday","Saturday"]
+    var Months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+    Mfd.setMonth(7)
+    Mfd.setDate(13)
+    document.write(`
+    Name = ${Name}<br>
+    Price = ${Price}<br>
+    Mfd = ${Weeksday[Mfd.getDay()]} ${Mfd.getDate()},${Months[Mfd.getMonth()]},${Mfd.getFullYear()}
+    `)
+</script>

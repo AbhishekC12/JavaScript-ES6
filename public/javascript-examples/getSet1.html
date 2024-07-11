@@ -1,0 +1,22 @@
+<script>
+    class Product
+    {
+        Name = "Samsung TV";
+        Rating = {
+            CustomerRating : {rate:3.5, count:5600},
+            VendorRating : {
+                DirectRating : {rate:4.2,count:3},
+                IndirectVendor : {rate:4.5, count:56}
+            }
+        }
+        get DirectVendorRating(){
+            return this.Rating.VendorRating.DirectRating.rate
+        }
+        set DirectVendorRating(newRating){
+            this.Rating.VendorRating.DirectRating.rate = newRating;
+        }
+    }
+    let obj = new Product;
+    obj.DirectVendorRating = prompt("Enter Rating")
+    document.write(`Direct Vendor Rating : ${obj.DirectVendorRating}`)
+</script>

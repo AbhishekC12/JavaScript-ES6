@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module Demo</title>
+    <script type="module">
+        import { Hello , Welcome } from '../library/modules/home.module.js'
+        import multiply , { Addition }  from '../library/modules/math.module.js'
+        document.querySelector("p").innerHTML = Hello() + "<br>" + Welcome() + "<br>" + `Addition = ${Addition(20,30)}` + "<br>" + `Multiplication = ${multiply(6,6)}`;
+    </script>
+</head>
+<body>
+    <p></p>   
+</body>
+</html>
